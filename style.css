@@ -1,0 +1,95 @@
+/* Accessibility-first, slightly adapted look */
+:root{
+  --brand:#2b7ac9;
+  --high-contrast:#0b2b4a;
+  --bg:#fbfdff;
+  --text:#111;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  margin:0;
+  font-size:20px; /* larger base for elderly readers */
+  line-height:1.6;
+}
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:10px;
+  top:10px;
+  width:auto;
+  height:auto;
+  background:#fff;
+  padding:8px;
+  z-index:1000;
+  border:2px solid var(--brand);
+}
+.site-header{
+  background:linear-gradient(180deg,var(--brand),#4a9be0);
+  color:white;
+  padding:18px 12px;
+  text-align:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+.header-inner{max-width:1100px;margin:0 auto}
+.site-title{font-size:34px;margin:0}
+.site-tag{margin:6px 0 0;font-size:18px;opacity:0.95}
+nav.main-nav{margin-top:12px}
+.main-nav{list-style:none;padding:0;margin:0;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.main-nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  padding:8px 12px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.08);
+  font-size:20px;
+}
+.main-nav a:focus, .main-nav a:hover{outline:3px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.12)}
+
+.container{max-width:1100px;margin:24px auto;padding:0 16px}
+.hero{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.lead{font-size:22px}
+.sitemap-list{list-style:disc;padding-left:22px;margin:12px 0}
+.sitemap-list ul{list-style:circle;padding-left:20px;margin-top:6px}
+.sitemap-list a{color:var(--brand);text-decoration:underline;font-weight:600}
+.cta{background:#fff;border-radius:var(--radius);padding:18px;margin-top:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+
+.primary-btn{
+  display:inline-block;
+  background:var(--high-contrast);
+  color:white;
+  padding:12px 18px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:20px;
+  font-weight:700;
+}
+.primary-btn:focus{outline:4px solid #ffd966}
+
+.site-footer{padding:18px;text-align:center;color:#444;background:#eef6ff;margin-top:28px;border-top:1px solid #e1f0ff}
+
+/* Simple responsive */
+@media (max-width:600px){
+  .site-title{font-size:28px}
+  body{font-size:18px}
+  .main-nav{gap:8px}
+}
+
+/* Faculties list style (used by faculties.html) */
+.faculty-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:12px}
+.faculty-card{background:white;padding:16px;border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,0.05);text-align:left}
+.faculty-card h4{margin:0 0 8px;font-size:22px}
+.faculty-card p{margin:0 0 12px}
+.link-btn{display:inline-block;padding:10px 12px;border-radius:8px;background:var(--brand);color:white;text-decoration:none;font-weight:700}
+.breadcrumb{font-size:16px;margin-bottom:10px}

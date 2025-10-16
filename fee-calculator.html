@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fee Calculator — Skill Grow Academy</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <h1 class="site-title">Skill Grow Academy</h1>
+      <p class="site-tag">Empowering the elderly community through education</p>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul class="main-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="faculties.html">Faculties</a></li>
+        <li><a href="fee-calculator.html" aria-current="page">Fee Calculator</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" role="main" class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> › <strong>Fee Calculator</strong>
+    </nav>
+
+    <h2>Fee calculator</h2>
+    <p>Choose how many courses and whether you qualify for a senior discount.</p>
+
+    <form id="calc-form" onsubmit="return false;" aria-label="Fee calculator form">
+      <label for="courses">Number of courses</label><br>
+      <input type="number" id="courses" name="courses" min="1" max="10" value="1" required aria-required="true"><br><br>
+
+      <label for="discount">Senior discount?</label><br>
+      <select id="discount" name="discount">
+        <option value="0">No</option>
+        <option value="10">Yes — 10% off</option>
+      </select><br><br>
+
+      <button class="primary-btn" onclick="calculateFee()">Calculate</button>
+    </form>
+
+    <div id="result" aria-live="polite" style="margin-top:16px;font-weight:700;font-size:20px"></div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2025 Skill Grow Academy</p>
+  </footer>
+</body>
+</html>
